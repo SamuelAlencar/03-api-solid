@@ -15,6 +15,7 @@
         "@typescript-eslint"
     ],
     "rules": {
+        "camelcase": "off",
         "indent": [
             "error",
             "tab"
