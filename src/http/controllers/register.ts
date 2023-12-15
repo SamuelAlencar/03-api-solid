@@ -3,6 +3,7 @@ import {FastifyRequest,FastifyReply  } from 'fastify';
 import { z } from 'zod';
 import { RegisterUseCase } from '@/use-cases/register';
 import { UserAlreadyExistsError } from '@/use-cases/errors/user-alreadt-exists-error';
+import { throws } from 'assert';
 
 
 export async function register (request: FastifyRequest, reply:FastifyReply) {
@@ -28,8 +29,7 @@ export async function register (request: FastifyRequest, reply:FastifyReply) {
 			return reply.status(409).send({ message: err.message});
 		}
 
-		return reply.status(500).send(); //TODO fix me
-
+		throw err
 	}
 
 	return reply.status(201).send();
