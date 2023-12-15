@@ -17,7 +17,7 @@ describe('Register Use Case', () => {
         })
 
 
-        expect(user.id).toEqual(expect.any(String))
+        await expect(user.id).toEqual(expect.any(String))
     })
 
 
@@ -37,7 +37,7 @@ describe('Register Use Case', () => {
             user.password_hash
         )
 
-        expect(isPasswordCorrectlyHashed).toBe(true)
+        await expect(isPasswordCorrectlyHashed).toBe(true)
     })
 
     it('should shold not be able to register with same email twice', async () => {
@@ -52,7 +52,7 @@ describe('Register Use Case', () => {
             password: '123456'
         })
 
-        expect(() => 
+        await expect(() => 
         registerUseCase.execute({
                 name: 'Jhon Doe',
                 email,
