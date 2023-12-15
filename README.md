@@ -108,3 +108,9 @@ https://www.npmjs.com/package/fastify
 Zod é uma biblioteca de validação de esquema que permite validar e tipar dados de entrada em sua aplicação TypeScript. Ela oferece uma maneira fácil e intuitiva de definir e validar esquemas de objeto em tempo de execução, ajudando a garantir que os dados de entrada atendam aos requisitos de validação definidos
 
 https://www.npmjs.com/package/zod
+
+## Vitest
+O Vitest é um framework de teste unitário JavaScript/TypeScript moderno e fácil de usar. Ele é baseado no Jest, mas oferece recursos adicionais, como: Testes síncronos e assíncronos: Adequado para testar código que usa APIs ou outras dependências assíncronas.
+
+https://www.npmjs.com/package/vitest
+
