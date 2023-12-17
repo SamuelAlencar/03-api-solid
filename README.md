@@ -62,6 +62,7 @@ Representar cada elemento da vida real em objetos
 
 ### UML
 
+
 ## DESIGN PATERNS
 
 https://youtu.be/QY0Kdg83orY
@@ -111,11 +112,11 @@ referencias:
 
 
 
-S - SRP = Single-responsibility principle (Princípio da responsabilidade única)
-O - OCP = Open-closed principle (Princípio aberto-fechado)
-L - LSP = Liskov Substitution Principle (Princípio da Substituição de Liskov)
-I - ISP = Interface Segregation Principle (Princípio de segregação de interface)
-D - DIP = Dependency Inversion Priciple (Princípio de Inversão de Dependência)
+* S - SRP = Single-responsibility principle (Princípio da responsabilidade única)
+* O - OCP = Open-closed principle (Princípio aberto-fechado)
+* L - LSP = Liskov Substitution Principle (Princípio da Substituição de Liskov)
+* I - ISP = Interface Segregation Principle (Princípio de segregação de interface)
+* D - DIP = Dependency Inversion Priciple (Princípio de Inversão de Dependência)
 
 
 
