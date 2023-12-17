@@ -110,7 +110,7 @@ referencias:
 * https://www.youtube.com/watch?v=vAV4Vy4jfkc *
 
 
-
+$ PILARES SOLID
 
 * S - SRP = Single-responsibility principle (Princípio da responsabilidade única)
 * O - OCP = Open-closed principle (Princípio aberto-fechado)
