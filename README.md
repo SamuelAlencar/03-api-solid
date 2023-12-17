@@ -31,12 +31,6 @@ GymPass style app.
 - [ ] Todas listas de dados precisam estar paginadas com 20 itens por página
 - [ ] O usuário deve ser identificado po um JWT (JSON Web Token)
 
-
-
-
-
-
-
 node-postgres.com
 
 ORM - Object relational Map
@@ -54,14 +48,74 @@ https://hub.docker.com/
 
     npx prisma migrate dev
 
-## SOLID
-Uncle Bob(Clean Code)
 
-S
-O
-L
-I
-D - Dependency Inversion Priciple
+
+
+## POO
+Representar cada elemento da vida real em objetos
+
+    ### Pilares
+    - Herança
+    - Polimorfismo
+    - Encapsulamento
+    - Abstração
+
+### UML
+
+## DESIGN PATERNS
+
+https://youtu.be/QY0Kdg83orY
+
+
+## AGILE
+
+## TDD
+
+## SCRUM
+https://www.scrum.org/
+
+Referencias:
+https://youtu.be/ln6t3uyTveQ
+
+Livro:
+https://www.amazon.com.br/SCRUM-fazer-dobro-trabalho-metade/dp/8543107164/ref=asc_df_8543107164/?tag=googleshopp00-20&linkCode=df0&hvadid=379751563849&hvpos=&hvnetw=g&hvrand=12236658454849852678&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1031549&hvtargid=pla-810952799643&psc=1&mcid=6889a5380b23339db0e169691be990a7
+
+
+## CLEAN CODE
+Uncle Bob
+referencias:
+https://www.youtube.com/watch?v=ln6t3uyTveQ
+* Os nomes são importantes
+* Regra do escoteiro
+* Você é o autor do código
+* DRY(Don't Repeat Yourself) - Não repita a si mesmo
+* Comentários no código ❌
+* Tratamentos de erros
+* Testes (regras FIRST - Fast/Independent/Repeatable/Self-Validation/Timely(Pontualidade))
+
+Livro
+https://www.amazon.com.br/C%C3%B3digo-limpo-Robert-C-Martin/dp/8576082675/ref=asc_df_8576082675/?tag=googleshopp00-20&linkCode=df0&hvadid=379792215563&hvpos=&hvnetw=g&hvrand=13151762692712609075&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1031549&hvtargid=pla-398225630878&psc=1&mcid=2b0fb83a4146383497d27512de9c9086
+
+
+## SOLID
+** Autores **
+* Uncle Bob(Clean Code) *
+* Robert C. Martin *
+
+referencias: 
+* https://www.youtube.com/watch?v=6SfrO3D4dHM *
+* https://www.youtube.com/watch?v=arAz2Ff8s88 *
+* https://www.youtube.com/watch?v=mkx0CdWiPRA *
+* https://www.youtube.com/watch?v=vAV4Vy4jfkc *
+
+
+
+
+S - SRP = Single-responsibility principle (Princípio da responsabilidade única)
+O - OCP = Open-closed principle (Princípio aberto-fechado)
+L - LSP = Liskov Substitution Principle (Princípio da Substituição de Liskov)
+I - ISP = Interface Segregation Principle (Princípio de segregação de interface)
+D - DIP = Dependency Inversion Priciple (Princípio de Inversão de Dependência)
 
 
 
