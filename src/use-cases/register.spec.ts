@@ -5,22 +5,7 @@ import { RegisterUseCase } from '@/use-cases/register';
 import { UserAlreadyExistsError } from './errors/user-alread-exists-error';
 
 describe('Register Use Case', () => {
-    it('should be able to register', async () => {
-        const usersRepository = new InMemoryUsersRepository()
-        const registerUseCase = new RegisterUseCase(usersRepository)
-
-        const { user } = await registerUseCase.execute({
-            name: 'Jhon Doe',
-            email: 'jhond_doe_00001@gmail.com',
-            password: '123456'
-        })
-
-
-        await expect(user.id).toEqual(expect.any(String))
-    })
-
-
-
+    
     it('should hash user password upon registration', async () => {
         const usersRepository = new InMemoryUsersRepository()
         const registerUseCase = new RegisterUseCase(usersRepository)
@@ -37,6 +22,19 @@ describe('Register Use Case', () => {
         )
 
         await expect(isPasswordCorrectlyHashed).toBe(true)
+    })
+
+    it('should be able to register', async () => {
+        const usersRepository = new InMemoryUsersRepository()
+        const registerUseCase = new RegisterUseCase(usersRepository)
+
+        const { user } = await registerUseCase.execute({
+            name: 'Jhon Doe',
+            email: 'jhond_doe_00001@gmail.com',
+            password: '123456'
+        })
+
+        await expect(user.id).toEqual(expect.any(String))
     })
 
     it('should shold not be able to register with same email twice', async () => {

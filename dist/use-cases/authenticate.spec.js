@@ -7604,7 +7604,7 @@ var InMemoryUsersRepository = class {
   }
 };
 
-// src/use-cases/register.spec.ts
+// src/use-cases/authenticate.spec.ts
 var import_bcryptjs2 = require("bcryptjs");
 
 // node_modules/@vitest/runner/node_modules/yocto-queue/index.js
@@ -15295,84 +15295,52 @@ var index = /* @__PURE__ */ Object.freeze({
 // node_modules/vitest/dist/index.js
 var expectTypeOf = dist.expectTypeOf;
 
-// src/use-cases/register.ts
-var import_bcryptjs = require("bcryptjs");
-
-// src/use-cases/errors/user-alread-exists-error.ts
-var UserAlreadyExistsError = class extends Error {
+// src/use-cases/errors/invalid-credentials-error.ts.ts
+var InvalidCredentialsError = class extends Error {
   constructor() {
-    super("\u26A0\uFE0F E-mail already exists.");
+    super("\u26A0\uFE0F InvalidCredentials.");
   }
 };
 
-// src/use-cases/register.ts
-var RegisterUseCase = class {
+// src/use-cases/authenticate.ts
+var import_bcryptjs = require("bcryptjs");
+var AuthenticateUseCase = class {
   constructor(usersRepository) {
     this.usersRepository = usersRepository;
   }
   async execute({
-    name,
     email,
     password
   }) {
-    const password_hash = await (0, import_bcryptjs.hash)(password, 6);
-    const userWithSameEmail = await this.usersRepository.findByEmail(email);
-    if (userWithSameEmail) {
-      throw new UserAlreadyExistsError();
+    const user = await this.usersRepository.findByEmail(email);
+    if (!user) {
+      throw new InvalidCredentialsError();
     }
-    const user = await this.usersRepository.create({
-      name,
-      email,
-      password_hash
-    });
+    const doesPasswordMatches = await (0, import_bcryptjs.compare)(password, user.password_hash);
+    if (!doesPasswordMatches) {
+      throw new InvalidCredentialsError();
+    }
     return {
       user
     };
   }
 };
 
-// src/use-cases/register.spec.ts
-describe("Register Use Case", () => {
-  it("should be able to register", async () => {
+// src/use-cases/authenticate.spec.ts
+describe("Authenticate Use Case", () => {
+  it("should be able to authenticate", async () => {
     const usersRepository = new InMemoryUsersRepository();
-    const registerUseCase = new RegisterUseCase(usersRepository);
-    const { user } = await registerUseCase.execute({
+    const sut = new AuthenticateUseCase(usersRepository);
+    await usersRepository.create({
       name: "Jhon Doe",
+      email: "jhond_doe_00001@gmail.com",
+      password_hash: await (0, import_bcryptjs2.hash)("123456", 6)
+    });
+    const { user } = await sut.execute({
       email: "jhond_doe_00001@gmail.com",
       password: "123456"
     });
     await globalExpect(user.id).toEqual(globalExpect.any(String));
-  });
-  it("should hash user password upon registration", async () => {
-    const usersRepository = new InMemoryUsersRepository();
-    const registerUseCase = new RegisterUseCase(usersRepository);
-    const { user } = await registerUseCase.execute({
-      name: "Jhon Doe",
-      email: "jhond_doe_00001@gmail.com",
-      password: "123456"
-    });
-    const isPasswordCorrectlyHashed = await (0, import_bcryptjs2.compare)(
-      "123456",
-      user.password_hash
-    );
-    await globalExpect(isPasswordCorrectlyHashed).toBe(true);
-  });
-  it("should shold not be able to register with same email twice", async () => {
-    const usersRepository = new InMemoryUsersRepository();
-    const registerUseCase = new RegisterUseCase(usersRepository);
-    const email = "jhon_doe_00001@gmail.com";
-    await registerUseCase.execute({
-      name: "Jhon Doe",
-      email,
-      password: "123456"
-    });
-    await globalExpect(
-      () => registerUseCase.execute({
-        name: "Jhon Doe",
-        email,
-        password: "123456"
-      })
-    ).rejects.toBeInstanceOf(UserAlreadyExistsError);
   });
 });
 /*! Bundled license information:
