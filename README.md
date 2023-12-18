@@ -50,6 +50,8 @@ https://hub.docker.com/
 ## subir aplicação no docker
     docker run --name api-solid-pg -e POSTGRESQL_USERNAME=docker -e POSTGRESQL_PASSWORD=docker -e POSTGRESQL_DATABASE=apisolid -p 5432:5432 bitnami/postgresql
 
+
+    --> Criar tabelas
     npx prisma migrate dev
 
 
@@ -57,6 +59,8 @@ https://hub.docker.com/
 
 ## POO
 Representar cada elemento da vida real em objetos
+Referencias:
+https://www.youtube.com/watch?v=KlIL63MeyMY
 
     Pilares
     - Herança

@@ -1,9 +1,7 @@
 "use strict";
-var __create = Object.create;
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
 var __getOwnPropNames = Object.getOwnPropertyNames;
-var __getProtoOf = Object.getPrototypeOf;
 var __hasOwnProp = Object.prototype.hasOwnProperty;
 var __export = (target, all) => {
   for (var name in all)
@@ -17,23 +15,14 @@ var __copyProps = (to, from, except, desc) => {
   }
   return to;
 };
-var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(
-  // If the importer is in node compatibility mode or this is not an ESM
-  // file that has been converted to a CommonJS file using a Babel-
-  // compatible transform (i.e. "__esModule" has not been set), then set
-  // "default" to the CommonJS "module.exports" for node compatibility.
-  isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
-  mod
-));
 var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-// src/app.ts
-var app_exports = {};
-__export(app_exports, {
-  app: () => app
+// src/http/routes.ts
+var routes_exports = {};
+__export(routes_exports, {
+  appRoutes: () => appRoutes
 });
-module.exports = __toCommonJS(app_exports);
-var import_fastify = __toESM(require("fastify"));
+module.exports = __toCommonJS(routes_exports);
 
 // src/env/index.ts
 var import_config = require("dotenv/config");
@@ -138,25 +127,10 @@ async function register(request, reply) {
 }
 
 // src/http/routes.ts
-async function appRoutes(app2) {
-  app2.post("/users", register);
+async function appRoutes(app) {
+  app.post("/users", register);
 }
-
-// src/app.ts
-var import_zod3 = require("zod");
-var app = (0, import_fastify.default)();
-app.register(appRoutes);
-app.setErrorHandler((error, _, reply) => {
-  if (error instanceof import_zod3.ZodError) {
-    return reply.status(400).send({ message: "Validation error.", issues: error.format() });
-  }
-  if (env.NODE_ENV !== "production") {
-    console.error(error);
-  } else {
-  }
-  return reply.status(500).send({ message: "Internal server error" });
-});
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
-  app
+  appRoutes
 });
