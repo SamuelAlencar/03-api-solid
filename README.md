@@ -15,15 +15,15 @@ GymPass style app.
 - [ ] Deve ser possível o usuário obter seu histórico de check-ins
 - [ ] Deve ser possível o usuário buscar academias proximas
 - [ ] Deve ser possível o usuário buscar academias pelo nome
-- [ ] Deve ser possível o usuário realizar check-in de uma academia
+- [x] Deve ser possível o usuário realizar check-in de uma academia
 - [ ] Deve ser possível validar o check-in de um usuário
-- [ ] Deve ser possível cadastrar uma academia
+- [x] Deve ser possível cadastrar uma academia
 
 ## RNs (Regras de negócio)
 
 - [x] O usuário não deve poder se cadastrar com um e-mail duplicado
-- [ ] O usuário não pode fazer 2 check-ins no mesmo dia
-- [ ] O usuario não pode fazer check-in se não estiver perto (100m) da academia
+- [x] O usuário não pode fazer 2 check-ins no mesmo dia
+- [x] O usuario não pode fazer check-in se não estiver perto (100m) da academia
 - [ ] O check-in só pode ser validado 20 min após ser validado
 - [ ] O check-in só pode ser validado por administradores
 - [ ] A academia só pode ser cadastrada por administradores
