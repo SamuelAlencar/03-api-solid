@@ -54,6 +54,10 @@ https://hub.docker.com/
     --> Criar tabelas
     npx prisma migrate dev
 
+    -->
+    Gerar Schema Prisma
+    npx prisma generate
+
 
 
 
