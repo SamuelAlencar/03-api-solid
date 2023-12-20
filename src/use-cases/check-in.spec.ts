@@ -1,10 +1,10 @@
-import { InMemoryCheckInsRepository } from '@/repositories/in-memory/in-memory-check-ins-repository'
 import { expect, describe, it, beforeEach, vi, afterEach } from 'vitest'
 import { CheckInUseCase } from '@/use-cases/check-in'
 import { InMemoryGymsRepository } from '@/repositories/in-memory/in-memory-gyms-repository'
 import { Decimal } from '@prisma/client/runtime/library'
 import { MaxNumberOfCheckInsError } from './errors/max-number-of-check-ins-error'
 import { MaxDistanceError } from './errors/max-distance-error'
+import { InMemoryCheckInsRepository } from '@/repositories/in-memory/in-memory-check-ins-repository'
 
 let checkInsRepository: InMemoryCheckInsRepository
 let gymsRepository: InMemoryGymsRepository
@@ -63,7 +63,7 @@ describe('Check-in Use Case', () => {
         ).rejects.toBeInstanceOf(MaxNumberOfCheckInsError)
     })
 
-    it.skip('should be able to check in twice but in different days', async () => {
+    it('should be able to check in twice but in different days', async () => {
         vi.setSystemTime(new Date(2022, 0, 20, 8, 0, 0))
 
         await sut.execute({
