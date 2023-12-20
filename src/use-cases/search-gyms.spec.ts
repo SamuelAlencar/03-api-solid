@@ -11,7 +11,7 @@ describe('Fetch User Check-in History Use Case', () => {
         sut = new SearchGymsUseCase(gymsRepository)
     })
 
-    it('should be able to fetch serach for gyms', async () => {
+    it('should be able to fetch search for gyms', async () => {
         await gymsRepository.create({
             title: 'Javascript Academy',
             description: null,
