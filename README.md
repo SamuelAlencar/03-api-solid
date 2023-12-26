@@ -43,6 +43,31 @@ ORM - Object relational Map
     ** prisma.io **
 knexjs.org (query-builder)
 
+
+## JWT
+Ref:
+https://pt.stackoverflow.com/questions/254503/o-que-%C3%A9-basic-auth
+https://www.base64decode.org/pt/
+
+JWT: JSON Web Token
+
+Usuário faz login, envia -email/senha, o back-end cria um token ÚNICO, não modificável e STATELESS
+
+Stateless: Não armazena em nenhuma estrutura de persistencia de dados(banco de dados)
+
+Back-end: quando vai criar o token ele usa a PALAVRA-CHAVE(string)
+
+Palavra chave: kajhsdhkas.hdakljdhajkhdlkj.ahdiquwydu9qpw8
+
+Email/Senha -> header.payload.sign
+
+Login -> JWT
+JWT -> Todas requisições dali pra frente
+Header(cabeçalho): Authorization: Bearer JWT
+
+
+
+
 ## DOCKER
 docker.com
 https://hub.docker.com/
@@ -169,6 +194,10 @@ https://www.npmjs.com/package/dotenv
 O Fastify é um framework que permite que você crie servidores REST, bem como uma API REST. Em comparação com o Express, a forma como se desenvolve uma API é bem parecida.
 
 https://www.npmjs.com/package/fastify
+
+Fastify JWT
+https://github.com/fastify/fastify-jwt
+
 
 ## Zod
 
