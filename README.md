@@ -24,7 +24,7 @@ GymPass style app.
 - [x] O usuário não deve poder se cadastrar com um e-mail duplicado
 - [x] O usuário não pode fazer 2 check-ins no mesmo dia
 - [x] O usuario não pode fazer check-in se não estiver perto (100m) da academia
-- [ ] O check-in só pode ser validado 20 min após ser validado
+- [x] O check-in só pode ser validado 20 min após ser validado
 - [ ] O check-in só pode ser validado por administradores
 - [ ] A academia só pode ser cadastrada por administradores
 
@@ -32,7 +32,7 @@ GymPass style app.
 
 - [x] A senha do usuário precisa estra criptografada
 - [x] Os dados da aplicação precisam estra persistidos em um banco POstgreSQL
-- [ ] Todas listas de dados precisam estar paginadas com 20 itens por página
+- [x] Todas listas de dados precisam estar paginadas com 20 itens por página
 - [ ] O usuário deve ser identificado po um JWT (JSON Web Token)
 
 node-postgres.com
@@ -42,6 +42,31 @@ ORM - Object relational Map
     typeORM
     ** prisma.io **
 knexjs.org (query-builder)
+
+
+## JWT
+Ref:
+https://pt.stackoverflow.com/questions/254503/o-que-%C3%A9-basic-auth
+https://www.base64decode.org/pt/
+
+JWT: JSON Web Token
+
+Usuário faz login, envia -email/senha, o back-end cria um token ÚNICO, não modificável e STATELESS
+
+Stateless: Não armazena em nenhuma estrutura de persistencia de dados(banco de dados)
+
+Back-end: quando vai criar o token ele usa a PALAVRA-CHAVE(string)
+
+Palavra chave: kajhsdhkas.hdakljdhajkhdlkj.ahdiquwydu9qpw8
+
+Email/Senha -> header.payload.sign
+
+Login -> JWT
+JWT -> Todas requisições dali pra frente
+Header(cabeçalho): Authorization: Bearer JWT
+
+
+
 
 ## DOCKER
 docker.com
@@ -169,6 +194,10 @@ https://www.npmjs.com/package/dotenv
 O Fastify é um framework que permite que você crie servidores REST, bem como uma API REST. Em comparação com o Express, a forma como se desenvolve uma API é bem parecida.
 
 https://www.npmjs.com/package/fastify
+
+Fastify JWT
+https://github.com/fastify/fastify-jwt
+
 
 ## Zod
 
