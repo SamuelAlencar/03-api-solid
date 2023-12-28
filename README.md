@@ -81,7 +81,8 @@ https://hub.docker.com/
 
     -->
     Gerar Schema Prisma
-    npx prisma generate
+    
+    
 
 
 
